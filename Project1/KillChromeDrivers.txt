@@ -1,0 +1,3 @@
+Run this in the cmd to kill all chromedrivers that are still running
+
+taskkill /F /IM chromedriver.exe /T
