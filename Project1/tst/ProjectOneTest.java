@@ -85,7 +85,7 @@ public class ProjectOneTest {
     public void mainPageActions(String city) {
         ArrayList<Week> dates = startingDateHolder.getTRAVEL_WEEKS();
 
-        for(int i = 0; i < 2; i++) {
+        for(int i = 0; i< dates.size(); i++) {
             System.out.println("Current number of flights on the flightlist: " + flightList.size());
             System.out.println("Current number of flights on the error list: " + flightsWithErrors.getTRAVEL_WEEKS().size());
             System.out.println("Scanning for flights from Atlanta to " + city + " from " + dates.get(i).getFIRST_MONTH() + " " + dates.get(i).getFIRST_DAY() + " to " +
@@ -335,7 +335,7 @@ public class ProjectOneTest {
     private static void initializeDatabase() throws SQLException {
         Statement statement = connection.createStatement();
         statement.execute(
-                "CREATE TABLE IF NOT EXISTS flights (" +
+                "CREATE TABLE IF NOT EXISTS thanksgiving_eve_flights (" +
                         "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                         "airline TEXT," +
                         "departure_city TEXT," +
@@ -358,7 +358,7 @@ public class ProjectOneTest {
                 int price = Integer.parseInt(priceString);
 
                 try(PreparedStatement preparedStatement = connection.prepareStatement(
-                        "INSERT INTO flights (airline, departure_city, destination_city, departure_date," +
+                        "INSERT INTO thanksgiving_eve_flights (airline, departure_city, destination_city, departure_date," +
                                 "return_date, price, nonstop, retrieval_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
                 )) {
                     preparedStatement.setString(1, f.getAIRLINE());
