@@ -335,7 +335,7 @@ public class ProjectOneTest {
     private static void initializeDatabase() throws SQLException {
         Statement statement = connection.createStatement();
         statement.execute(
-                "CREATE TABLE IF NOT EXISTS thanksgiving_eve_flights (" +
+                "CREATE TABLE IF NOT EXISTS black_friday_flights (" +
                         "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                         "airline TEXT," +
                         "departure_city TEXT," +
@@ -358,7 +358,7 @@ public class ProjectOneTest {
                 int price = Integer.parseInt(priceString);
 
                 try(PreparedStatement preparedStatement = connection.prepareStatement(
-                        "INSERT INTO thanksgiving_eve_flights (airline, departure_city, destination_city, departure_date," +
+                        "INSERT INTO black_friday_flights (airline, departure_city, destination_city, departure_date," +
                                 "return_date, price, nonstop, retrieval_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
                 )) {
                     preparedStatement.setString(1, f.getAIRLINE());
