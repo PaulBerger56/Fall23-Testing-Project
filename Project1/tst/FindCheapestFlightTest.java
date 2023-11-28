@@ -1,5 +1,6 @@
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -60,5 +61,16 @@ public class FindCheapestFlightTest {
         }
 
         return  cheapestFlight;
+    }
+
+    @AfterClass
+    public static void teardown() {
+        try {
+            if (connection != null && !connection.isClosed()) {
+                connection.close();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

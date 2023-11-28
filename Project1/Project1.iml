@@ -20,5 +20,8 @@
     <orderEntry type="library" name="apache.logging.log4j.slf4j.impl" level="project" />
     <orderEntry type="library" name="apache.httpcomponents.client5.httpclient5" level="project" />
     <orderEntry type="library" name="apache.commons.csv" level="project" />
+    <orderEntry type="library" name="apache.poi" level="project" />
+    <orderEntry type="library" name="apache.poi.ooxml" level="project" />
+    <orderEntry type="library" name="commons.io1" level="project" />
   </component>
 </module>
